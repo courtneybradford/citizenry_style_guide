@@ -1,0 +1,396 @@
+
+// ---------------------- How to import SASS partials: -----------------------
+@import 'colors';
+@import 'normalize';
+@import 'grid';
+
+// ---------------------------------- Styles ----------------------------------
+body {
+  background: #fff;
+  color: $ghost;
+}
+.bounds {
+  max-width: 1280px;
+  padding: 0 3rem;
+}
+
+.styleBlock {
+  margin: 60px 0px 120px;
+  
+  &.darkBg {
+  background: $mono-800;
+  margin: 0;
+  }
+}
+
+hr {
+  border:0;
+  border-bottom: 2px solid $light-grey;
+}
+
+p {
+  font-family: Brandon Text, Helvetica, Arial, sans-serif;
+  color: $mono-700;
+
+  a:not(.button) {
+    color: $blue-100;
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: $blue-300;
+  }
+}
+
+
+// ---------------------------------- Links ----------------------------------
+
+/* unvisited link */
+a:not(.button) {
+    color: $blue-200;
+    text-decoration: none;
+}
+
+/* visited link */
+a:not(.button):visited {
+    color: $blue-200;
+    transition: all .3s ease-in-out;
+}
+
+/* mouse over link */
+a:not(.button):hover {
+    color: $blue-400;
+    text-decoration: underline;
+}
+
+/* selected link */
+a:active {
+    color: $blue-200;
+}
+
+// --------------------------------- Headings ---------------------------------
+h1 {
+  font-size: 3.75em;
+  font-family: Brandon Grotesque;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.1em;
+}
+
+
+h2 {
+  font-size: 2.25em;
+  font-family: Brandon Grotesque;
+  text-transform: uppercase;
+  line-height: 1.3em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+h3 {
+  font-size: 1.875em;
+  font-family: Brandon Grotesque;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.3em;
+  letter-spacing: 0.1em;
+}
+
+h4 {
+  font-size: 1.3125em;
+  font-family: Brandon Text;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.3em;
+  letter-spacing: 0.125em;
+}
+
+
+h5 {
+  font-size: 1em;
+  font-family: Brandon Text;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.25em;
+  letter-spacing: 0.125em;
+}
+
+h6 { 
+  font-size: .875em;
+  font-family: Brandon Text;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.125em;
+  letter-spacing: 0.1em;
+  color: $mono-500;
+}
+
+h1.serif {
+  font-size: 2.25rem;
+  font-family: Ashbury;
+  font-weight: 500;
+  color: $mono-800;
+  text-transform: none;
+  line-height: 3.125rem;
+  letter-spacing: 0.1em;
+
+}
+
+
+h2.serif {
+  font-size: 0.9375rem;
+  font-family: Ashbury;
+  text-transform: none;
+  line-height: 1.125em;
+  font-weight: 500;
+  color: $mono-500;
+  
+  a:not(.button) {
+    color: $mono-700;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $mono-600;
+    text-decoration: underline;
+  }
+}
+
+h3.serif {
+  font-size: .9375rem;
+  font-family: Ashbury;
+  text-transform: none;
+  line-height: 1.125em;
+  font-weight: 500;
+  color: $mono-800;
+}
+
+// ---------------------------------- Lists ----------------------------------
+
+ul.swatch-list {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  &:last-child {
+    margin-right: 0;
+  }
+
+  .bg {
+    height: 110px;
+    width: 110px;
+    border-radius: 2px;
+  }
+
+  h6 {
+    color: $mono-700;
+    line-height: 1em;
+    margin: 12px 0px 8px;
+  }
+
+  h3.serif {
+    color: $mono-700;
+    margin: 0px 0px 8px;
+  }
+
+  // Colors
+  &.mono-50 .bg{
+  background: $mono-50;
+}
+  &.mono-100 .bg{
+    background: $mono-100;
+  }
+  &.mono-200 .bg{
+    background: $mono-200;
+  }
+  &.mono-300 .bg{
+    background: $mono-300;
+  }
+  &.mono-400 .bg{
+    background: $mono-400;
+  }
+  &.mono-500 .bg{
+    background: $mono-500;
+  }
+  &.mono-600 .bg{
+    background: $mono-600;
+  }
+  &.mono-700 .bg{
+    background: $mono-700;
+  }
+  &.mono-800 .bg{
+    background: $mono-800;
+  }
+  &.mono-900 .bg{
+    background: $mono-900;
+  }
+
+  &.blue-100 .bg{
+    background: $blue-100;
+  }
+  &.blue-200 .bg{
+    background: $blue-200;
+  }
+  &.blue-300 .bg{
+    background: $blue-300;
+  }
+  &.blue-400 .bg{
+    background: $blue-400;
+  }
+  &.blue-500 .bg{
+    background: $blue-500;
+  }
+  &.blue-600 .bg{
+    background: $blue-600;
+  }
+  &.blue-700 .bg{
+    background: $blue-700;
+  }
+
+  &.agave-1 .bg{
+    background: $agave-1;
+  }
+  &.agave-2 .bg{
+    background: $agave-2;
+  }
+  &.rose-1 .bg{
+    background: $rose-1;
+  }
+  &.rose-2 .bg{
+    background: $rose-2;
+  }
+  &.pinot-1 .bg{
+    background: $pinot-1;
+  }
+  &.pinot-2 .bg{
+    background: $pinot-2;
+  }
+  &.brass-1 .bg{
+    background: $brass-1;
+  }
+  &.brass-2 .bg{
+    background: $brass-2;
+  }
+  &.peach-1 .bg{
+    background: $peach-1;
+  }
+  &.peach-2 .bg{
+    background: $peach-2;
+  }
+
+}
+
+
+// ---------------------------------- Buttons ----------------------------------
+
+
+.button {
+  border-radius: 1px;
+  padding: 19px 32px 17px;
+  line-height: 1;
+  font-size: .75em;
+  color: $mono-0;
+  background: $mono-800;
+  display: inline-block;
+  transition: all .3s ease-in-out;
+  font-family: Brandon Grotesque;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 12px 12px 24px 0px;
+
+  &:hover {
+    background: $mono-900;
+    text-decoration: none;
+    color: $mono-0;
+  }
+
+  &.primary {
+    padding: 19px 64px 17px;
+    background: $blue-200;
+
+    &:hover {
+      background: $blue-500;
+    }
+  }
+  &.knockout {
+    padding: 17px 24px 15px;
+    background: transparent;
+    border: 2px solid $mono-900;
+    color: $mono-800; 
+
+    &:hover {
+      background: $mono-900;
+      color: $mono-0;
+    }
+  }
+  &.secondary {
+    padding: 19px 32px 17px;
+    background: $agave-1;
+
+    &:hover {
+      background: $agave-2;
+    }
+  }
+
+  &.tertiary {
+    padding: 19px 32px 17px;
+    background: $peach-1;
+
+    &:hover {
+      background: $peach-2;
+    }
+  }
+  
+  &.disabled {
+    padding: 19px 32px 17px;
+    background: $mono-300;
+    color: $mono-600;
+    pointer-events: none;
+
+    &:hover {
+      background: $mono-300;
+    }
+  }
+
+  &.inverse {
+    padding: 19px 32px 17px;
+    background: $mono-0;
+    color: $mono-800;
+    margin: 20px 24px 20px 40px;
+
+    &:hover {
+      background: $mono-300;
+      color: $mono-900;
+    }
+  }
+
+  &.inverseKnockout {
+    padding: 17px 24px 15px;
+    background: transparent;
+    border: 2px solid $mono-0;
+    color: $mono-0;
+    margin: 20px 24px 20px 40px;
+
+    &:hover {
+      background: $mono-0;
+      color: $mono-800;
+    }
+  }
+
+  &.small {
+     font-family: Brandon Grotesque;
+     font-weight: 600;
+     padding: 14px 24px 12px;
+     font-size: 0.625rem;
+  }
+}
+
