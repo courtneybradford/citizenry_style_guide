@@ -302,7 +302,7 @@ li {
   background: $mono-800;
   display: inline-block;
   transition: all .3s ease-in-out;
-  font-family: Brandon Grotesque;
+  font-family: 'Brandon Grotesque';
   font-weight: 600;
   letter-spacing: .2em;
   text-transform: uppercase;
@@ -389,7 +389,6 @@ li {
   }
 
   &.small {
-     font-family: 'BrandonGrotesque';
      font-weight: 600;
      padding: 14px 24px 12px;
      font-size: 0.625rem;
