@@ -19,7 +19,7 @@ gulp.task('styles', () => {
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
     .pipe($.sourcemaps.write())
-    .pipe(gulp.dest('.tmp/styles'))
+    .pipe(gulp.dest('app/styles'))
     .pipe(reload({stream: true}));
 });
 
@@ -29,7 +29,7 @@ gulp.task('scripts', () => {
     .pipe($.sourcemaps.init())
     .pipe($.babel())
     .pipe($.sourcemaps.write('.'))
-    .pipe(gulp.dest('.tmp/scripts'))
+    .pipe(gulp.dest('app/scripts'))
     .pipe(reload({stream: true}));
 });
 
@@ -53,7 +53,7 @@ gulp.task('lint:test', lint('test/spec/**/*.js', testLintOptions));
 
 gulp.task('html', ['styles', 'scripts'], () => {
   return gulp.src('app/*.html')
-    .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
+    .pipe($.useref({searchPath: ['app', 'app', '.']}))
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.cssnano()))
     .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
@@ -75,7 +75,7 @@ gulp.task('images', () => {
 gulp.task('fonts', () => {
   return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) {})
     .concat('app/fonts/**/*'))
-    .pipe(gulp.dest('.tmp/fonts'))
+    .pipe(gulp.dest('app/fonts'))
     .pipe(gulp.dest('dist/fonts'));
 });
 
@@ -88,14 +88,14 @@ gulp.task('extras', () => {
   }).pipe(gulp.dest('dist'));
 });
 
-gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
+gulp.task('clean', del.bind(null, ['app', 'dist']));
 
 gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
   browserSync({
     notify: false,
     port: 9000,
     server: {
-      baseDir: ['.tmp', 'app'],
+      baseDir: ['app', 'app'],
       routes: {
         '/bower_components': 'bower_components'
       }
@@ -105,7 +105,7 @@ gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
   gulp.watch([
     'app/*.html',
     'app/images/**/*',
-    '.tmp/fonts/**/*'
+    'app/fonts/**/*'
   ]).on('change', reload);
 
   gulp.watch('app/styles/**/*.scss', ['styles']);
@@ -132,7 +132,7 @@ gulp.task('serve:test', ['scripts'], () => {
     server: {
       baseDir: 'test',
       routes: {
-        '/scripts': '.tmp/scripts',
+        '/scripts': 'app/scripts',
         '/bower_components': 'bower_components'
       }
     }
