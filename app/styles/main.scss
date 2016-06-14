@@ -8,7 +8,7 @@
 // ---------------------------------- Styles ----------------------------------
 body {
   background: #fff;
-  color: $ghost;
+  color: $mono-800;
   font: 'BrandonGrotesque';
 }
 .bounds {
@@ -75,7 +75,7 @@ h1 {
   font-size: 3.75em;
   font-family: 'BrandonGrotesque';
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1;
   letter-spacing: 0.1em;
 }
@@ -317,10 +317,10 @@ li {
 
   &.primary {
     padding: 19px 64px 17px;
-    background: $blue-200;
+    background: $blue-400;
 
     &:hover {
-      background: $blue-500;
+      background: $blue-600;
     }
   }
   &.knockout {
